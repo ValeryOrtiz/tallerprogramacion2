@@ -8,14 +8,21 @@ public class Propietario {
     private String numeroIdentificacion;
     private String email;
     private String numeroCelular;
+    private int edad;
     private List<Vehiculo> vehiculos;
 
-    public Propietario(String nombre,String numeroIdentificacion,String email,String numeroCelular){
+    public Propietario(String nombre,String numeroIdentificacion,String email,String numeroCelular,int edad){
         this.nombre=nombre;
         this.numeroIdentificacion=numeroIdentificacion;
         this.numeroCelular=numeroCelular;
         this.email=email;
+        this.edad=edad;
         this.vehiculos = new ArrayList<>();
+    }
+
+    public Propietario(String nombre, int edad){
+        this.nombre=nombre;
+        this.edad=edad;
     }
 
     public String getNombre() {
@@ -57,11 +64,35 @@ public class Propietario {
     public void agregarVehiculo(Vehiculo vehiculo) {
         this.vehiculos.add(vehiculo);
     }
+    
+    public Vehiculo buscarVehiculoPorPlaca(String placa) {
+        for (int i = 0; i < vehiculos.size(); i++) {
+            Vehiculo vehiculo = vehiculos.get(i);
+            if (vehiculo.getPlaca().equals(placa)) {
+                return vehiculo;
+            }
+        }
+        return null;
+    }
+    
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
 
     @Override
     public String toString() {
-        return "Propietario [nombre=" + nombre + ", numeroIdentificacion=" + numeroIdentificacion + ", email=" + email
-                + ", numeroCelular=" + numeroCelular + ", vehiculos=" + vehiculos + "]";
+        if (numeroIdentificacion == null && email == null && numeroCelular == null && (vehiculos == null || vehiculos.isEmpty())) {
+            return "Propietario [nombre=" + nombre + ", edad=" + edad + "]";
+        } 
+        else {
+            return "Propietario [nombre=" + nombre + ", numeroIdentificacion=" + numeroIdentificacion + ", email=" + email
+                + ", numeroCelular=" + numeroCelular + ", edad=" + edad + ", vehiculos=" + vehiculos + "]";
+        }
     }
 
     

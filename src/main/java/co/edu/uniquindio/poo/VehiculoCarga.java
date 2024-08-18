@@ -3,9 +3,9 @@ package co.edu.uniquindio.poo;
 public class VehiculoCarga extends Vehiculo {
     private double capacidadCarga;
     private int numeroEjes;
-    public VehiculoCarga(String placa, String modelo, String marca, String color, double capacidadCarga,
+    public VehiculoCarga(String placa, String modelo, String marca, String color, String numeroChasis, double capacidadCarga,
             int numeroEjes) {
-        super(placa, modelo, marca, color);
+        super(placa, modelo, marca, color,numeroChasis);
         this.capacidadCarga = capacidadCarga;
         this.numeroEjes = numeroEjes;
     }
@@ -24,8 +24,8 @@ public class VehiculoCarga extends Vehiculo {
     @Override
     public String toString() {
         return "VehiculoCarga [capacidadCarga=" + capacidadCarga + ", numeroEjes=" + numeroEjes + ", Placa="
-                + getPlaca() + ", Modelo=" + getModelo() + ", Marca=" + getMarca() + ", Color="
-                + getColor() + "]";
+                + getPlaca() + ", Modelo=" + getModelo() + ", Marca=" + getMarca() + ", Color="+getColor() 
+                +"numero de chasis="+getNumeroChasis()+  "]";
     }
 
     

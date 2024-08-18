@@ -5,12 +5,14 @@ public abstract class Vehiculo {
     private String modelo;
     private String marca;
     private String color;
+    private String numeroChasis;
     
-    public Vehiculo(String placa, String modelo, String marca, String color) {
+    public Vehiculo(String placa, String modelo, String marca, String color, String numeroChasis) {
         this.placa = placa;
         this.modelo = modelo;
         this.marca = marca;
         this.color = color;
+        this.numeroChasis = numeroChasis;
     }
 
     public String getPlaca() {
@@ -44,6 +46,15 @@ public abstract class Vehiculo {
     public void setColor(String color) {
         this.color = color;
     }
+
+    public String getNumeroChasis() {
+        return numeroChasis;
+    }
+
+    public void setNumeroChasis(String numeroChasis) {
+        this.numeroChasis = numeroChasis;
+    }
+    
 
     
 }
