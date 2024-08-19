@@ -7,7 +7,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Transporte {
+public class EmpresaTransporte {
     private List<VehiculoCarga> vehiculosCarga;
     private List<VehiculoPasajeros> vehiculosPasajeros;
     private List<Propietario> propietarios;
@@ -15,7 +15,7 @@ public class Transporte {
 
     
 
-    public Transporte() {
+    public EmpresaTransporte() {
         this.vehiculosCarga = new ArrayList<>();
         this.vehiculosPasajeros = new ArrayList<>();
         this.propietarios = new ArrayList<>();
@@ -185,7 +185,7 @@ public class Transporte {
     }
 
     public Collection<Propietario> propietariosMayores(){
-        Transporte transporte = new Transporte();
+        EmpresaTransporte transporte = new EmpresaTransporte();
 
         Scanner input = new Scanner(System.in);
         System.out.println("ingrese la cantidad de propietarios que desea registrar: ");
@@ -219,7 +219,7 @@ public class Transporte {
     }
 
     public Collection<Usuario> usuariosSobrepeso(){
-        Transporte transporte = new Transporte();
+        EmpresaTransporte transporte = new EmpresaTransporte();
         Scanner input = new Scanner(System.in);
 
         System.out.println("ingrese la cantidad de usuarios que desea registrar: ");
@@ -238,7 +238,6 @@ public class Transporte {
             transporte.agregarUsuario(usuario);
         }
 
-
         System.out.println("ingrese el peso estandar: ");
         double peso = input.nextDouble();
         input.nextLine();
@@ -252,10 +251,7 @@ public class Transporte {
         System.out.println("Usuarios que superan el peso de " + peso + ":");
         System.out.println(usuariosSobrepeso);
 
-        
         return Collections.unmodifiableCollection(usuariosSobrepeso);
     }
-    
-
 
 }
